@@ -5,6 +5,7 @@
 // Métodos sacar, depositar, verSaldo, verTitular
 
 // Nunca nomear a ação. Ela precisa ser considerada genérica
+// Ações sempre retornam ações
 
 echo "<pre>";
 
