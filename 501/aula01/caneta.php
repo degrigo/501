@@ -8,16 +8,17 @@ class Caneta
 	public $marca;
 	public $tampada;
 
-	public function escrever()
-	{
+	public function escrever() {
+
 		echo "Escrevi algo na tela" . "<br>";
+
 	}
 
 	public function destampar() {
 		$this->tampada = false;
 	}
 
-	public function tampar() {
+	public function tampar() { //escrever em forma de verbo
 		$this->tampada = true;
 	}
 
