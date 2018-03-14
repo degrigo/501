@@ -1,5 +1,23 @@
 <?php 
 
+// três contas - Conta Corrente, Salário e Poupança
+// Conta Poupança
+//  - titular da conta, número da conta, saldo e senha
+//  - sacar, depositar
+// Conta Corrente
+//  - titular, número, saldo, senha, Cheque Especial
+//  - sacar, depositar, liberar cheque especial
+// Conta Salário
+//  - titular, Número da conta, saldo, senha, Cheque Especial(opcional).
+//  - Sacar, Deposotar, Liberar Cheque Especial(opcional).
+
+// Poupança: dar 2% sobre o valor de dep´osito par ao cliente
+// Prefixo poupança: cp
+// Corrente: tirar 2% sobre o valor de depósito;
+// Prefixo contaCorrente: cc
+// Salário: não terá alterações de depósito.
+// Prefixo salário: cs
+
 abstract class Conta 
 {
 	private $titular;
