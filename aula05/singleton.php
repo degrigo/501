@@ -7,7 +7,7 @@ class Conexao
 
 	private static $user = 'tadeu';
 	private static $pass = '123';
-	private static $dsn = 'pgsql:host=localhost;dbname=test';
+	private static $dsn = 'pgsql:host=localhost;dbname=aula05';
 	private static $instance = null;
 
 	public static function getInstance()
@@ -20,5 +20,6 @@ class Conexao
 		return self::$instance;
 	}
 
-
 }
+
+var_dump(Conexao::getInstance());
