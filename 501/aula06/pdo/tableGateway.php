@@ -120,3 +120,4 @@ class TableGateway
 // $onde = "nome like '%Lu%'";
 // $usuarios = $table->buscarTodos('tb_usuarios',$onde);
 // print_r($usuarios);
+
