@@ -12,7 +12,7 @@ class Controller
 	public function __construct()
 	{
 		$this->model = new Model();
-	}]
+	}
 
 	// Quando rodar a aplicação
 	// Vamos pegar os dados no model
