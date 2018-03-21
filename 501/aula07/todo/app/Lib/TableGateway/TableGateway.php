@@ -32,7 +32,7 @@ abstract class TableGateway
 		$this->con->exec($sql);
 	}
 
-	public function atualizar(rray $dados, string $onde)
+	public function atualizar(array $dados, string $onde)
 	{
 	
 		foreach ($dados as $campo => $valor) {
@@ -55,7 +55,7 @@ abstract class TableGateway
 		$this->con->exec($sql);
 	}
 
-	public function buscar(tring $onde)
+	public function buscar(string $onde)
 	{
 		$sql = "SELECT * FROM {$this->tabela} WHERE {$onde}";
 

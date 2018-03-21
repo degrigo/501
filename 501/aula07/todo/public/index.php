@@ -18,3 +18,11 @@ echo "<hr>";
 $users = (new UsuariosMapper())->buscarTodos();
 
 print_r($users);
+
+$dados = [
+	'nome' => 'Daniela Pini',
+	'email' => 'danipini9@hotmail.com',
+	'senha' => md5('456')	
+];
+
+(new UsuariosMapper)->inserir($dados);
