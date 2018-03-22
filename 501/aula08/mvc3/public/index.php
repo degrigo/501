@@ -1,6 +1,6 @@
 <?php
 
-require '..config/config.php';
+require '../config/config.php';
 require '../autoload.php';
 
 use Controller\Controller;
