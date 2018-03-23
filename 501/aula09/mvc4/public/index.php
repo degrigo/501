@@ -11,7 +11,7 @@ use Lib\FrontController\FrontController;
 // usuarios/edit 	-> editar usuários
 // ?rota=usuarios&acao=index
 
-$rota = $_GET['rota'];
-$acao = $_GET['acao'];
+// $rota = $_GET['rota'];
+// $acao = $_GET['acao'];
 
-(new FrontController())->run($rota, $acao);
+(new FrontController())->run();

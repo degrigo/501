@@ -6,19 +6,26 @@ use Controller\UsuariosController;
 
 class FrontController
 {
-	public function run(string $route, $action)
+	public function run()
 	{
-		if($route == 'usuarios'){
-			$usuariosController = new usuariosController();
+		$rota = isset($_GET['r']) ? $_GET['r'] : 'usuarios';
 
-			if($action == 'index'){
-				$usuariosController->index();
-			}			
+		$rota = explode('/', $rota);
 
-			if($action == 'new'){
-				$usuariosController->new();
-			}
+		$controller = isset($rota[0]) ? $rota[0] : 'usuarios';
 
-		}
+		$action = isset($rota[1]) ? $rota[1] : 'index';
+
+		$id = isset($rota[2]) ? $rota[2] : null;
+
+		$controller = 'Controller\\' . ucfirst($controller) . 'Controller';
+
+		// new Controller\UsuariosController
+
+		$objController = new $controller();
+
+		// obj(UsuariosController)->new()
+
+		$objController->$action($id);
 	}
 }
