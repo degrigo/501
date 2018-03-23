@@ -20,14 +20,22 @@ class UsuariosController
 	public function index()
 	{
 		$usuarios = $this->usuariosModel->all();
-		print_r($usuarios);
-		die();
-		$usuarios = $this->baseView->render('usuarios/index', ['usuarios' => $usuarios]);
+		$usuarios = $this->baseView->render(
+			'usuarios/index', ['usuarios' => $usuarios]
+			);
 	}
+
 	public function new()
 	{
-		echo "NEW";
+		$this->baseView->render('usuarios/new');
 	}	
+
+	public function create()
+	{
+		$this->usuariosModel->inserir($_POST);
+		header('Location:?usuarios');
+	}	
+
 	public function edit($id)
 	{
 		echo "Edit {$id}";

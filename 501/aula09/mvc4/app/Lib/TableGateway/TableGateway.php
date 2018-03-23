@@ -27,7 +27,6 @@ abstract class TableGateway
 		$valores= implode(',', $valores);
 
 		$sql = "INSERT INTO {$this->tabela}({$campos}) VALUES({$valores})";
-		echo $sql;
 
 		$this->con->exec($sql);
 	}
@@ -43,24 +42,18 @@ abstract class TableGateway
 		
 		$sql = "UPDATE {$this->tabela} SET {$sets} WHERE {$onde}";
 
-		echo $sql;
-
 		$this->con->exec($sql);
 	}
 
 	public function deletar(string $onde)
 	{
 		$sql = "DELETE FROM {$this->tabela} WHERE {$onde}";
-		echo $sql;
 		$this->con->exec($sql);
 	}
 
 	public function buscar(string $onde)
 	{
 		$sql = "SELECT * FROM {$this->tabela} WHERE {$onde}";
-
-		echo $sql;
-
 		$resultado = $this->con->query($sql);
 		$registro = $resultado->fetch(PDO::FETCH_ASSOC);
 
@@ -75,12 +68,15 @@ abstract class TableGateway
 			$sql .= " WHERE {$onde}";
 		}
 
-		echo $sql;
-
 		$resultado = $this->con->query($sql);
-		$registro = $resultado->fetchAll(PDO::FETCH_ASSOC);
+		
+		while($registro = $resultado->fetchObject($this->entity)){
+			
+			$collection[] = $registro;
+		
+		}
 
-		return $registro;
+		return $collection;
 	}	
 
 }

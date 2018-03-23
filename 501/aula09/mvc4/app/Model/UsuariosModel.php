@@ -11,11 +11,16 @@ class UsuariosModel
 
 	public function __construct()
 	{
-		$this->usuariosMapper = usuariosMapper();
+		$this->usuariosMapper = new UsuariosMapper();
 	}	
 
 	public function all()
 	{
-		return $this->usuariosMapper->findAll();
+		return $this->usuariosMapper->buscarTodos();
+	}	
+
+	public function inserir($data)
+	{
+		$this->usuariosMapper->inserir($data);
 	}
 }
