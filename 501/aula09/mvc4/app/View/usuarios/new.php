@@ -2,10 +2,10 @@
 	<p>Nome:</p>
 	<input type="text" name="nome"/>	
 	<p>Email:</p>
-	<input type="email" name="nome"/>	
+	<input type="email" name="email"/>	
 	<p>Senha:</p>
-	<input type="password" name="nome"/>
-	<input type="submit" name="Salvar"/>
+	<input type="password" name="senha"/>
+	<input type="submit" value="salvar"/>
 </form>
 
 <a href="?r=usuarios">Voltar</a>
